@@ -50,15 +50,15 @@ if($first_visibility == 'on')
 				</div>
 			</div>
 			<!-- <div class="intro-bg bg-img" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)"></div> -->
-			<div class="intro-bg">
+			<div class="intro-bg" data-bg-type="<?php the_field('section_design'); ?>">
 				<div class="parallax inner-img bg-img" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)"></div>
 			</div>
-            <?php
+            <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 		</section>
 		<?php
 		endwhile; // End of the loop.
@@ -103,15 +103,15 @@ if($team_photo_grid) { ?>
 			 </div>
 		</div>
 		<!-- <div class="common-sec-img bg-img parallax" style="background-image: url(<?php echo $panel_image_team['url']; ?>)"></div> -->
-		<div class="common-sec-img common-sec-img--small">
+		<div class="common-sec-img common-sec-img--small" data-bg-type="<?php the_field('section_design_1'); ?>">
 			<div class="parallax inner-img bg-img" style="background-image: url(<?php echo $panel_image_team['url']; ?>)"></div>
 		</div>
-        <?php
+        <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 	</section>
 
 <?php }

@@ -43,7 +43,7 @@ $secvar = 	count($count_nav);
 
 
 // code for count navigation close
-
+$section_design = get_field('section_design');
 if($first_visibility == 'on')
 {
 if(have_posts()):
@@ -57,14 +57,14 @@ if(have_posts()):
 			</div>
 		</div>
 		<!-- <div class="intro-bg bg-img" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)"></div> -->
-		<div class="intro-bg">
+		<div class="intro-bg" data-bg-type="<?php echo $section_design; ?>">
 			<div class="parallax inner-img bg-img" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)"></div>
-		</div> <?php
+		</div> <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 	</section>
 	<?php
 	endwhile; // End of the loop.
@@ -88,14 +88,14 @@ if( have_rows('job_overview') ):
 					</div>
 				</div>
 				<!-- <div class="common-sec-img bg-img" style="background-image: url(<?php echo $panel_image_career['url']; ?>)"></div> -->
-				<div class="common-sec-img common-sec-img--small">
+				<div class="common-sec-img common-sec-img--small" data-bg-type="<?php the_sub_field('section_design'); ?>">
 					<div class="parallax inner-img bg-img" style="background-image: url(<?php echo $panel_image_career['url']; ?>)"></div>
-				</div> <?php
+				</div> <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 			</section>
 			<?php
 		elseif( get_row_layout() == 'section_therr_career' ):
@@ -107,12 +107,12 @@ if( have_rows('job_overview') ):
 						<h2 class="secondary-title"><?php echo get_sub_field('heading_secthree'); ?></h2>
 						<?php echo get_sub_field('career_short_text');?>
 					</div>
-				</div> <?php
+				</div> <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 			</section>
 		<?php
 
@@ -141,14 +141,14 @@ if( have_rows('job_overview') ):
 				</div>
 			</div>
 			<!-- <div class="common-sec-img bg-img" style="background-image: url(<?php echo $panel_image_career['url']; ?>)"></div> -->
-			<div class="common-sec-img common-sec-img--small">
+			<div class="common-sec-img common-sec-img--small" data-bg-type="<?php the_sub_field('section_design'); ?>">
 				<div class="parallax inner-img bg-img" style="background-image: url(<?php echo $panel_image_career['url']; ?>)"></div>
-			</div> <?php
+			</div> <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 		</section>
 
 		<?php
@@ -182,7 +182,7 @@ if( have_rows('job_overview') ):
 				</div>
 			</div>
 			<!-- <div class="common-sec-img bg-img" style="background-image: url(<?php echo $panel_image_job['url']; ?>)"></div> -->
-			<div class="common-sec-img common-sec-img--small">
+			<div class="common-sec-img common-sec-img--small" data-bg-type="<?php the_sub_field('section_design_1'); ?>">
 				<div class="parallax inner-img bg-img" style="background-image: url(<?php echo $panel_image_job['url']; ?>)"></div>
 			</div> <?php /*
 		if(count($count_nav)>1)

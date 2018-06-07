@@ -72,15 +72,15 @@ if(have_posts()):
 			</div>
 		</div>
 		<!-- <div class="intro-bg bg-img" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)"></div> -->
-		<div class="intro-bg">
+		<div class="intro-bg" data-bg-type="<?php the_field('section_design'); ?>">
 			<div class="parallax inner-img bg-img" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)"></div>
 		</div>
-        <?php
+        <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 		<div class="just-scroll">Just scroll</div>
 		<!--<ul class="nav-list">
 			<li class="active-num"><a href="#sec-1"><span class="nav-num">1</span> <span class="nav-title">Nav Title</span></a></li>
@@ -127,16 +127,16 @@ if( have_rows('add_section') ):
 				</div>
 			</div>
 			<!-- <div class="common-sec-img bg-img parallax" style="background-image: url(<?php echo $panel_image['url']; ?>)"></div> -->
-			<div class="common-sec-img common-sec-img--small">
+			<div class="common-sec-img common-sec-img--small" data-bg-type="<?php the_sub_field('section_design'); ?>">
 				<div class="parallax inner-img bg-img" style="background-image: url(<?php echo $panel_image['url']; ?>)"></div>
 			</div>
 		
-  <?php
+  <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 		</section>
 
 		<?php
@@ -188,15 +188,15 @@ if( have_rows('add_section') ):
 			</div>
 
 			<!-- <div class="common-sec-img bg-img" style="background-image: url(<?php echo $panel_image_three['url']; ?>)"></div> -->
-			<div class="common-sec-img common-sec-img--small">
+			<div class="common-sec-img common-sec-img--small" data-bg-type="<?php the_sub_field('section_design'); ?>">
 				<div class="parallax inner-img bg-img" style="background-image: url(<?php echo $panel_image_three['url']; ?>)"></div>
 			</div>
-			  <?php
+			  <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 
 		</section>
 		<?php
@@ -223,15 +223,15 @@ if( have_rows('add_section') ):
 			</div>
 
 			<!-- <div class="common-sec-img bg-img" style="background-image: url(<?php echo $panel_hseimage['url'];  ?>)"></div> -->
-			<div class="common-sec-img common-sec-img--small">
+			<div class="common-sec-img common-sec-img--small" data-bg-type="<?php the_sub_field('section_design'); ?>">
 				<div class="parallax inner-img bg-img" style="background-image: url(<?php echo $panel_hseimage['url'];  ?>)"></div>
 			</div>
-			  <?php
+			  <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 
 		</section>
 		<?php

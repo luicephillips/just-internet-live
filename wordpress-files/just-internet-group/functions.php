@@ -775,26 +775,28 @@ function cache_bust_css() {
 add_action( 'wp_enqueue_scripts', 'cache_bust_css', 1);
 
 
-function nav_vlue_count_section($count_nav)
-{
+function nav_vlue_count_section($count_nav) {
+?>
+<div class="side-menu">
+	<div class="side-menu-inner">
+<?php
 	if(count($count_nav) > 1 )
 	{
 		
 		$nvincrg = 1;
 	?>
-	
-		   <ul class="nav-list">
+		  <ul class="nav-list">
 		   <?php  foreach($count_nav as $count_val)
 			   {  
 			   if($nvincrg == 1)
 			   {
-				   echo '<li class="active-num"><a href="#sec-'.$nvincrg.'"><span class="nav-num">0'.$nvincrg.'</span></a> <span class="nav-title">'.$count_val.'</span> </li>';
+				   echo '<li class="active-num"><a href="#sec-'.$nvincrg.'"><span class="nav-num">'.$nvincrg.'</span></a> <span class="nav-title">'.$count_val.'</span> </li>';
 				   }else{
 					   $strng = $count_val;
 					   
 					   if($nvincrg<10)
 					   {
-						$strng = '0'.$nvincrg;   
+						$strng = $nvincrg;   
 					   }
 					   
 				   echo '<li><a href="#sec-'.$nvincrg.'"><span class="nav-num">'.$strng.'</span></a> <span class="nav-title">'.$count_val.'</span></li> ';
@@ -804,4 +806,22 @@ function nav_vlue_count_section($count_nav)
 			</ul>
 	<?php
 	}
-}
+	?>
+	<?php
+		//if(is_front_page())
+		//{				
+			if(is_home())
+			{
+			$page_for_posts = get_option( 'page_for_posts' );	
+			echo '<span class="page-meta">_'.get_the_title($page_for_posts ).'</span>';	
+			}else
+			{
+			echo '<span class="page-meta">_'.get_the_title().'</span>';	
+			}
+		//}
+	?>
+	</div>
+	</div>
+<?php
+
+}?>

@@ -80,15 +80,15 @@ if($first_visibility == 'on')
 				</div>
 			</div>
 			<!-- <div class="intro-bg bg-img" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)"></div> -->
-			<div class="intro-bg">
+			<div class="intro-bg" data-bg-type="<?php the_field('section_design'); ?>">
 				<div class="parallax inner-img bg-img" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)"></div>
 			</div>
-            <?php
+            <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 		</section>
 		<?php
 		endwhile; // End of the loop.
@@ -114,12 +114,12 @@ if( have_rows('add_job_section') ):
 					<?php echo $body_text_white; ?>
 				</div>
 			</div>
-            <?php
+            <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 		</section>
 
 	<?php elseif( get_row_layout() == 'section_thr_black_panel' ):
@@ -136,15 +136,15 @@ if( have_rows('add_job_section') ):
 				</div>
 			</div>
 			<!-- <div class="common-sec-img bg-img" style="background-image: url(<?php echo $panel_image_black['url']; ?>)"></div> -->
-			<div class="common-sec-img common-sec-img--small">
+			<div class="common-sec-img common-sec-img--small" data-bg-type="<?php the_sub_field('section_design'); ?>">
 				<div class="parallax inner-img bg-img" style="background-image: url(<?php echo $panel_image_black['url']; ?>)"></div>
 			</div>
-            <?php
+            <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 		</section>
 
 	<?php elseif( get_row_layout() == 'section_fiv_white_panel' ):
@@ -160,12 +160,12 @@ if( have_rows('add_job_section') ):
 					<?php echo $body_text_fv_white; ?>
 				</div>
 			</div>
-            <?php
+            <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 		</section>
 
 	<?php elseif( get_row_layout() == 'section_six_grey_panel' ):
@@ -184,15 +184,15 @@ if( have_rows('add_job_section') ):
 				</div>
 			</div>
 			<!-- <div class="common-sec-img bg-img" style="background-image: url(<?php echo $panel_image_six['url']; ?>)"></div> -->
-			<div class="common-sec-img common-sec-img--small">
+			<div class="common-sec-img common-sec-img--small" data-bg-type="<?php the_sub_field('section_design'); ?>">
 				<div class="parallax inner-img bg-img" style="background-image: url(<?php echo $panel_image_six['url']; ?>)"></div>
 			</div>
-            <?php
+            <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 		</section>
 
 	<?php

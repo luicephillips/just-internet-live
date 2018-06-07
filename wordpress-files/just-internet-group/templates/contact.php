@@ -89,16 +89,16 @@ if($section_one) {
 	</div>
 	<!--<div class="intro-bg bg-img parallax" style="background-image: url(images/intro-reference.jpg)"></div>-->
 	<?php if($panel_image ) { ?>
-	<div class="intro-bg">
+	<div class="intro-bg" data-bg-type="<?php the_field('section_design'); ?>">
 		<div class="parallax inner-img bg-img" style="background-image: url(<?php echo $panel_image['url']; ?>)"></div>
 	</div>
 	<?php } ?>
-    <?php
+    <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 </section>
 
 <?php
@@ -115,15 +115,15 @@ if(have_posts()):
 			</div>
 		</div>
 		<!--<div class="common-sec-img bg-img parallax" style="background-image: url(images/banner-reference-1.jpg)"></div>-->
-		<div class="common-sec-img common-sec-img--small">
+		<div class="common-sec-img common-sec-img--small" data-bg-type="<?php the_field('section_design_1'); ?>">
 			<div class="parallax inner-img bg-img" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)"></div>
 		</div>
-        <?php
+        <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 	</section>
 	<?php
 	endwhile; // End of the loop.

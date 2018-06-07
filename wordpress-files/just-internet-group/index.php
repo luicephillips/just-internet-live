@@ -26,6 +26,8 @@ $section_panel_image = get_field('section_panel_image',$page_for_posts);
 
 $first_visibility =  get_field('select_first_section_visibility',$page_for_posts);
 
+$section_design = get_field('section_design',$page_for_posts); 
+
 /**************************/
 $count_nav = array();
 $mainno = 1;
@@ -69,17 +71,17 @@ if($first_visibility == 'on')
 
 			<!-- <div class="intro-bg bg-img" style="background-image: url(<?php echo get_the_post_thumbnail_url($page_for_posts); ?>)"></div> -->
 
-			<div class="intro-bg">
+			<div class="intro-bg ">
 
 				<div class="parallax inner-img bg-img" style="background-image: url(<?php echo get_the_post_thumbnail_url($page_for_posts); ?>)"></div>
 
 			</div>
-<?php
+<!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 		</section>
 <?php 
 }
@@ -221,17 +223,17 @@ if($first_visibility == 'on')
 
 			<!-- <div class="common-sec-img bg-img" style="background-image: url(<?php echo $section_panel_image['url']; ?>)"></div> -->
 
-			<div class="common-sec-img common-sec-img--small">
+			<div class="common-sec-img common-sec-img--small"  data-bg-type="<?php echo $section_design; ?>">
 
 				<div class="parallax inner-img bg-img" style="background-image: url(<?php echo $section_panel_image['url']; ?>)"></div>
 
 			</div>
-<?php
+<!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 		</section>
 
 

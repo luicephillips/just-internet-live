@@ -9,7 +9,7 @@ get_header();
 	<?php
 	$first_visibility =  get_field('select_first_section_visibility');
 
-
+$section_design = get_field('section_design');
 
 // code for count navigation
 $count_nav = array();
@@ -59,15 +59,15 @@ if($first_visibility == 'on')
 				</div>
 			</div>
 			<!--<div class="intro-bg bg-img parallax" style="background-image: url(images/intro-about.jpg)"></div>-->
-			<div class="intro-bg">
+			<div class="intro-bg" data-bg-type="<?php echo $section_design; ?>">
 				<div class="parallax inner-img bg-img" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)"></div>
 			</div>
-             <?php
+             <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 		</section>
   <?php
 			endwhile; // End of the loop.
@@ -87,6 +87,7 @@ if( have_rows('add_section_about') ):
 			$five_blocks_with_brandabout = get_sub_field('five_blocks_with_brandabout');
 			$panel_image = get_sub_field('panel_image');
 			$section_id = get_sub_field('section_id');
+			$section_design = get_sub_field('section_design'); 
 			?>
 			<section class="sec-<?php echo $mainno;?> <?php if($first_visibility == 'off'){ echo 'offirst'; }?> page-sec page-about-sec common-sec dark-bg has-content dynamic-width <?php echo $section_id; ?>" id="<?php echo $section_id; ?>">
 				<div class="common-sec-txt">
@@ -109,8 +110,6 @@ if( have_rows('add_section_about') ):
 						{
 							$brand_image = $five_bloc['brand_image'];
 							$target_link = $five_bloc['target_link'];
-							//echo '<pre>';
-							//print_r($brand_image);
 							?>
 							<div class="brand-list--item auto-width--child">
 								<a href="<?php echo $five_bloc['brand_link']; ?>" title="<?php echo $five_bloc['title']; ?>" class="brand-list--link" target="<?php echo $target_link; ?>">
@@ -125,15 +124,15 @@ if( have_rows('add_section_about') ):
 					</div>
 				</div>
 				<!-- <div class="common-sec-img bg-img" style="background-image: url(<?php echo $panel_image['url'];?>)"></div> -->
-				<div class="common-sec-img common-sec-img--small">
+				<div class="common-sec-img common-sec-img--small"  data-bg-type="<?php echo $section_design; ?>">
 					<div class="parallax inner-img bg-img" style="background-image: url(<?php echo $panel_image['url'];?>)"></div>
 				</div>
-                 <?php
+                 <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 			</section>
 					<?php
 			} else {}
@@ -151,6 +150,7 @@ if( have_rows('add_section_about') ):
 				$cta_button_id = get_sub_field('cta_button_id');
 				$cta_button_target = get_sub_field('cta_button_target');
 				$section_id = get_sub_field('section_id');
+				$section_design = get_sub_field('section_design'); 
 			?>
 
 			<section class="sec-<?php echo $mainno;?> <?php echo $section_id ?>  page-sec common-sec common-sec--alt has-content dynamic-width <?php echo $background_color; ?>" id="<?php echo $section_id ?>">
@@ -169,16 +169,16 @@ if( have_rows('add_section_about') ):
 				if( $panel_image_three ) {
 				?>
 				<!-- <div class="common-sec-img bg-img" style="background-image: url(<?php echo $panel_image_three['url'];?>)"></div> -->
-				<div class="common-sec-img common-sec-img--small">
+				<div class="common-sec-img common-sec-img--small" data-bg-type="<?php echo $section_design; ?>">
 					<div class="parallax inner-img bg-img" style="background-image: url(<?php echo $panel_image_three['url'];?>)"></div>
 				</div>
 				<?php } ?>
-                 <?php
+                 <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 			</section>
 			<?php
 

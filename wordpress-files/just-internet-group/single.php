@@ -14,6 +14,8 @@ get_header();
 //section_title
 /* Start the Loop */
 $first_visibility =  get_field('select_first_section_visibility');
+$section_design_f = get_field('section_design');
+
 
 // code for count navigation
 $count_nav = array();
@@ -52,15 +54,15 @@ while ( have_posts() ) : the_post();
 			</div>
 		</div>
 		<!-- <div class="intro-bg bg-img" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)"></div> -->
-		<div class="intro-bg">
+		<div class="intro-bg" data-bg-type="<?php echo $section_design_f; ?>">
 			<div class="parallax inner-img bg-img" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)"></div>
 		</div>
-         <?php
+         <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 	</section>
 
 <?php
@@ -79,6 +81,7 @@ if( $section_two_blog ):
 	$cta_button_id = $section_two_blog['cta_button_id'];
 	$cta_button_target = $section_two_blog['cta_button_target'];
 	$section_id = $section_two_blog['section_id'];
+	$section_design = $section_two_blog['section_design']; 
 
 	?>
 	<section class="sec-<?php echo $mainno;?> <?php if($first_visibility == 'off'){ echo 'offirst'; }?>  page-sec common-sec common-sec--wide has-content dynamic-width dark-bg <?php echo $section_id; ?>" id="<?php echo $section_id; ?>">
@@ -92,15 +95,15 @@ if( $section_two_blog ):
 			</div>
 		</div>
 		<!-- <div class="common-sec-img bg-img" style="background-image: url(<?php echo $panel_image['url']; ?>)"></div> -->
-		<div class="common-sec-img common-sec-img--small">
+		<div class="common-sec-img common-sec-img--small" data-bg-type="<?php echo $section_design; ?>">
 			<div class="parallax inner-img bg-img" style="background-image: url(<?php echo $panel_image['url']; ?>)"></div>
 		</div>
-        <?php
+        <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 	</section>
 <?php
 endif;

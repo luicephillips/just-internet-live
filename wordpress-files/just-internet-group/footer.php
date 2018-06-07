@@ -79,17 +79,34 @@ $js_mod_time = filemtime(get_template_directory() . '/js/main.js');
 			} ?>
 			</ul>
 		</div>
-		<?php if($work_with_us_text ||  $just_talk_to_us) { ?>
+		<?php //if($work_with_us_text ||  $just_talk_to_us) { ?>
 		<div class="footer-interact">
 			<ul class="interact-list">
-				<?php if($work_with_us_text && $work_with_us_link && $work_with_us_image) { ?>
-				<li class="interact-list--item"><a href="<?php echo $work_with_us_link; ?>" title="<?php echo $work_with_us_text; ?>"><?php echo $work_with_us_text; ?><figure class="interact-icon"><img src="<?php echo $work_with_us_image['url']; ?>" alt="<?php echo $work_with_us_image['alt']; ?>"></figure></a></li>
-				<?php } if($just_talk_to_us && $just_talk_to_us_link ){ ?>
-				<li class="interact-list--item"><a href="<?php echo $just_talk_to_us_link; ?>" title="<?php echo $just_talk_to_us; ?>"><?php echo $just_talk_to_us; ?> <figure class="interact-icon"><div class="ham-icon"><span></span><span></span><span></span></div></figure></a></li>
-				<?php } ?>
+				<?php //if($work_with_us_text && $work_with_us_link && $work_with_us_image) { ?>
+				<li class="interact-list--item">
+					<a href="<?php echo $just_talk_to_us_link; ?>" title="<?php echo $just_talk_to_us; ?>" class="chat-btn"><span class="interact-link-text"><?php echo $just_talk_to_us; ?></span> <figure class="interact-icon"><div class="ham-icon"><span></span><span></span><span></span></div></figure></a>
+					<div class="media-object chat-box">
+						<div class="media-heading">
+							<h4><strong>Hi there!</strong>   &nbsp;&nbsp;...just wait a moment</h4>
+						</div>
+						<div class="media-body">
+							<div class="media-item">
+								<figure class="media-img"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/chat-person.jpg" alt=""></figure>
+								<div class="media-content">
+									<h4>Just int.</h4>
+									<p>Oeps! We’re not in right now...so take a look around or come back somewhere between 9 till 17 tomorow</p>
+								</div>
+							</div>
+						</div>
+						<a href="#" title="new chat" class="btn btn--solid disabled">new chat <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-small.svg" alt="arrow" class="btn-icn"></a>
+					</div>
+				</li>
+				<?php //} if($just_talk_to_us && $just_talk_to_us_link ){ ?>
+				<li class="interact-list--item"><a href="<?php echo $work_with_us_link; ?>" title="<?php echo $work_with_us_text; ?>"><span class="interact-link-text"><?php echo $work_with_us_text; ?></span><figure class="interact-icon"><img src="<?php echo $work_with_us_image['url']; ?>" alt="<?php echo $work_with_us_image['alt']; ?>"></figure></a></li>
+				<?php //} ?>
 			</ul>
 		</div>
-		<?php } ?>
+		<?php //} ?>
 	</div>
 </div>
 

@@ -52,15 +52,15 @@ if(have_posts()):
 			</div>
 		</div>
 		<!-- <div class="intro-bg bg-img" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)"></div> -->
-		<div class="intro-bg">
+		<div class="intro-bg" data-bg-type="<?php the_field('section_design'); ?>">
 			<div class="parallax inner-img bg-img" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)"></div>
 		</div>
-        <?php
+        <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 	</section>
 	<?php
 	endwhile; // End of the loop.
@@ -107,15 +107,15 @@ if( have_rows('job_overview') ):
 				</div>
 			</div>
 			<!-- <div class="common-sec-img bg-img" style="background-image: url(<?php echo $panel_image_job['url']; ?>)"></div> -->
-			<div class="common-sec-img common-sec-img--small">
+			<div class="common-sec-img common-sec-img--small" data-bg-type="<?php the_sub_field('section_design'); ?>">
 				<div class="parallax inner-img bg-img" style="background-image: url(<?php echo $panel_image_job['url']; ?>)"></div>
 			</div>
-            <?php
+            <!-- <?php
 		if(count($count_nav)>1)
 		{
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
-       <?php  } ?>
+       <?php  } ?> -->
 		</section>
 
 		<?php }
@@ -130,6 +130,7 @@ endif;
 ?>
 
 <?php
+nav_vlue_count_section($count_nav);
 // start footer (override footer.php)
 $footer_content = get_field('footer_content','option');
 $brands_title = get_field('brands_title','option');
@@ -235,22 +236,50 @@ $just_talk_to_us_image = get_field('just_talk_to_us_image','option');
             <?php
 			if($work_with_us_text ||  $just_talk_to_us)
 			{
-			?>
+			/*?>
 			<div class="footer-interact">
 				<ul class="interact-list">
-                	<?php
+					<?php
 					if($work_with_us_text && $work_with_us_link && $work_with_us_image)
 					{
 					?>
 					<li class="interact-list--item"><a href="<?php echo $work_with_us_link; ?>" title="<?php echo $work_with_us_text; ?>"><?php echo $work_with_us_text; ?><figure class="interact-icon"><img src="<?php echo $work_with_us_image['url']; ?>" alt="<?php echo $work_with_us_image['alt']; ?>"></figure></a></li>
-                    <?php }
+          <?php }
 					if($just_talk_to_us && $just_talk_to_us_link ){ ?>
 					<li class="interact-list--item"><a href="<?php echo $just_talk_to_us_link; ?>" title="<?php echo $just_talk_to_us; ?>"><?php echo $just_talk_to_us; ?> <figure class="interact-icon"><div class="ham-icon"><span></span><span></span><span></span></div></figure></a></li>
-                    <?php } ?>
+          <?php } ?>
 				</ul>
 
 
+			</div> <?php */ ?>
+			
+			<div class="footer-interact">
+				<ul class="interact-list">
+					<?php //if($work_with_us_text && $work_with_us_link && $work_with_us_image) { ?>
+					<li class="interact-list--item">
+						<a href="<?php echo $just_talk_to_us_link; ?>" title="<?php echo $just_talk_to_us; ?>" class="chat-btn"><span class="interact-link-text"><?php echo $just_talk_to_us; ?></span> <figure class="interact-icon"><div class="ham-icon"><span></span><span></span><span></span></div></figure></a>
+						<div class="media-object chat-box">
+							<div class="media-heading">
+								<h4><strong>Hi there!</strong>   &nbsp;&nbsp;...just wait a moment</h4>
+							</div>
+							<div class="media-body">
+								<div class="media-item">
+									<figure class="media-img"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/chat-person.jpg" alt=""></figure>
+									<div class="media-content">
+										<h4>Just int.</h4>
+										<p>Oeps! We’re not in right now...so take a look around or come back somewhere between 9 till 17 tomorow</p>
+									</div>
+								</div>
+							</div>
+							<a href="#" title="new chat" class="btn btn--solid disabled">new chat <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-small.svg" alt="arrow" class="btn-icn"></a>
+						</div>
+					</li>
+					<?php //} if($just_talk_to_us && $just_talk_to_us_link ){ ?>
+					<li class="interact-list--item"><a href="<?php echo $work_with_us_link; ?>" title="<?php echo $work_with_us_text; ?>"><span class="interact-link-text"><?php echo $work_with_us_text; ?></span><figure class="interact-icon"><img src="<?php echo $work_with_us_image['url']; ?>" alt="<?php echo $work_with_us_image['alt']; ?>"></figure></a></li>
+					<?php //} ?>
+				</ul>
 			</div>
+			
             <?php
 
 			} ?>
@@ -259,16 +288,23 @@ $just_talk_to_us_image = get_field('just_talk_to_us_image','option');
 
 
 
-	<div class="nav-btns">
+	<!-- <div class="nav-btns">
 		<a href="javascript:void(0)" title="just go there!" class="next-page">just show me the jobs! <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-white.svg" alt="<?php echo $just_go_there; ?>" class="img-icn"></a>
 		<a href="javascript:void(0)" title="go back" class="back-page"><?php echo $go_back; ?> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-white.svg" alt="<?php echo $go_back; ?>" class="img-icn"></a>
-	</div>
+	</div> -->
 
 </div>
+
+<?php 
+
+//nav_vlue_count_section($count_nav);
+
+?>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.jInvertScroll.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
-<?php 
-nav_vlue_count_section($count_nav);
-wp_footer(); ?>
+<?php
+wp_footer(); 
+
+?>
 
 

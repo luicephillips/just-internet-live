@@ -48,23 +48,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<header class="site-header">
 		<div class="logo-sec">
 			<a href="<?php echo get_home_url(); ?>" title="Just Internet" class="logo"><img src="<?php echo get_field('add_logo_image','option'); ?>" alt="Just Internet"></a>
-            <?php
-			if(is_front_page())
-			{
-					
-			}else
-			{
-				if(is_home())
-				{
-				$page_for_posts = get_option( 'page_for_posts' );	
-				echo '<span class="page-meta">_'.get_the_title($page_for_posts ).'</span>';	
-				}else
-				{
-				echo '<span class="page-meta">_'.get_the_title().'</span>';	
+			<!-- <?php
+				if(is_front_page())
+				{				
+					if(is_home())
+					{
+					$page_for_posts = get_option( 'page_for_posts' );	
+					echo '<span class="page-meta">_'.get_the_title($page_for_posts ).'</span>';	
+					}else
+					{
+					echo '<span class="page-meta">_'.get_the_title().'</span>';	
+					}
 				}
-			}
-			?>
-			
+			?> -->			
 		</div>
 	<div class="menu-wrap">
 		<div class="menu-icon"><span></span><span></span></div>
@@ -83,12 +79,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<?php wp_nav_menu(array('menu'=>'Main menu','container'=>false, 'menu_class'=>'primary-menu')) ?>
 			</div>
 			<div class="menu-footer">
-		<?php
+			<?php
 			$menu_footer_copyright = get_field('menu_footer_copyright','option');
 			$menu_footer_language = get_field('menu_footer_language','option');
-
-			if($menu_footer_copyright ) { ?>
-				<small class="copy"><?php echo $menu_footer_copyright ; ?> </small>
+			
+			if($menu_footer_copyright || get_field('copyright_header','option')) { ?>
+				<div class="copy">
+					<small class="copy"><?php echo $menu_footer_copyright ; ?></small>
+					<?php the_field('copyright_header','option'); ?>
+				</div>
 			<?php }
 
 			dynamic_sidebar('sidebar-2');

@@ -1,3 +1,5 @@
+(function(b,c){var $=b.jQuery||b.Cowboy||(b.Cowboy={}),a;$.throttle=a=function(e,f,j,i){var h,d=0;if(typeof f!=="boolean"){i=j;j=f;f=c}function g(){var o=this,m=+new Date()-d,n=arguments;function l(){d=+new Date();j.apply(o,n)}function k(){h=c}if(i&&!h){l()}h&&clearTimeout(h);if(i===c&&m>e){l()}else{if(f!==true){h=setTimeout(i?k:l,i===c?e-m:e)}}}if($.guid){g.guid=j.guid=j.guid||$.guid++}return g};$.debounce=function(d,e,f){return f===c?a(d,e,false):a(d,f,e!==false)}})(this);
+
 var $ = jQuery.noConflict();
 var rearrangeFlag = true,
   s;
@@ -185,6 +187,7 @@ $(document).ready(function () {
 
   /* Team show info on click */
   $(".team-list--child a").click(function(e) {
+		$(this).closest(".team-list--child").siblings(".team-list--child").removeClass("team-active");
     $(this).closest(".team-list--child").toggleClass("team-active");
     $(this).blur();
   });
@@ -192,7 +195,13 @@ $(document).ready(function () {
 
   if ($(".offirst").length) {
     $("body").addClass("no-first");
-  }
+	}
+	
+	$(".chat-btn").click(function(e) {
+		e.preventDefault();
+		$(this).find(".ham-icon").toggleClass("active");
+		$(".chat-box").stop().fadeToggle();
+	});
 
 });
 
@@ -332,6 +341,13 @@ $(window).scroll(function () {
   $(collides5.targets).addClass("under");
   /*** Invert Color ***/
 });
+
+$(window).scroll($.debounce(100, true, function () {
+	$("body").addClass("hide-sidemenu");
+}));
+$(window).scroll($.debounce(500, function () {
+	$("body").removeClass("hide-sidemenu");
+}));
 
 function main_width() {
   if (window.innerWidth > 767) {
