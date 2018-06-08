@@ -365,7 +365,12 @@ function main_width() {
       if ($(this).width() < getWidth1) {
         $(this).css("width", getWidth1);
       }
-    });
+		});
+		
+		$(".dynamic-overlap").each(function () {
+			var getWidth = $(this).find(".auto-width--parent").width();
+			$(this).find(".inner-wrap").width(getWidth);
+		});
     var width = 0;
     $(".page-sec").each(function () {
       width += $(this).outerWidth(true);
