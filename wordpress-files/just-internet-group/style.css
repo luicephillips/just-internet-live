@@ -375,6 +375,7 @@ small.copy { margin-bottom: 2px; }
 .social-list i:after { content: ''; position: absolute; top: -1px; left: 1px; bottom: 0; right: 0; width: 25px; height: 25px; z-index: -1; border-radius: 3px; -webkit-transform: rotate(45deg); transform: rotate(45deg); -webkit-transition: background-color 0.25s ease-in-out; transition: background-color 0.25s ease-in-out; }
 .social-list .fa-linkedin:after { background-color: #007ab9; }
 .social-list .fa-facebook:after { background-color: #3B5998; }
+.social-list .fa-twitter:after { background-color: #1DA1F2; }
 .social-list .fa-google-plus:after { background-color: #DB4437; }
 .social-list .fa-snapchat-ghost:after { background-color: #FFFC00; }
 .social-list .fa-pinterest-p:after, .social-list .fa-pinterest:after { background-color: #BD081C; }
