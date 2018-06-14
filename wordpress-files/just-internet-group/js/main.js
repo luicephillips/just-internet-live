@@ -299,7 +299,7 @@ $(window).resize(function () {
 
   }, 701);
   // Disable horizontal scrolling on mobile
-  if (window.innerWidth < 768) {
+  if (window.innerWidth < 768 || window.innerHeight < 400) {
     if (elem) {
       elem.destroy();
     }
@@ -351,12 +351,15 @@ $(window).scroll($.debounce(500, function () {
 
 function main_width() {
   if (window.innerWidth > 767) {
+		//alert()
     $(".has-content .inner-wrap > ul, .has-content .inner-wrap > ol").each(function () {
       $(this).css("width", "auto");
       var getWidth = ($(this).children(':last').offset().left + $(this).children(':last').outerWidth()) - $(this).offset().left;
       if ($(this).width() < getWidth) {
         $(this).css("width", getWidth);
-      }
+      } else {
+				$(this).css("width", $(this).width());
+			}
     });
 
     $(".has-content .inner-wrap, .auto-width--parent").each(function () {
@@ -364,7 +367,9 @@ function main_width() {
       var getWidth1 = ($(this).children(':last').offset().left + $(this).children(':last').outerWidth()) - $(this).offset().left;
       if ($(this).width() < getWidth1) {
         $(this).css("width", getWidth1);
-      }
+      } else {
+				$(this).css("width", $(this).width());
+			}
 		});
 		
 		$(".dynamic-overlap").each(function () {

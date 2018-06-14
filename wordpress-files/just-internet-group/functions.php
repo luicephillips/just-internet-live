@@ -813,10 +813,10 @@ function nav_vlue_count_section($count_nav) {
 			if(is_home())
 			{
 			$page_for_posts = get_option( 'page_for_posts' );	
-			echo '<span class="page-meta">_'.get_the_title($page_for_posts ).'</span>';	
+			echo '<span class="page-meta">'.get_the_title($page_for_posts ).'</span>';	
 			}else
 			{
-			echo '<span class="page-meta">_'.get_the_title().'</span>';	
+			echo '<span class="page-meta">'.get_the_title().'</span>';	
 			}
 		//}
 	?>

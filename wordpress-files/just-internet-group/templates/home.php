@@ -81,7 +81,7 @@ if(have_posts()):
 		?>
 		<div class="site-page"><span class="current-page"><?php if($mainno<=9){echo 0; }?><?php echo $mainno++; ?></span>/<span class="total-page"><?php echo $secvar; ?></span></div>
        <?php  } ?> -->
-		<div class="just-scroll">Just scroll</div>
+		<div class="just-scroll">Just Scroll</div>
 		<!--<ul class="nav-list">
 			<li class="active-num"><a href="#sec-1"><span class="nav-num">1</span> <span class="nav-title">Nav Title</span></a></li>
 			<li><a href="#sec-2"><span class="nav-num">2</span> <span class="nav-title">Nav Title</span></a></li>
