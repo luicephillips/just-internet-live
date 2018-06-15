@@ -1244,7 +1244,7 @@ small.copy { margin-bottom: 2px; }
 	.footer-interact { right: 26px; }
 	/* .nav-list { right: 20px; } */
 	.team-list--child { height: 190px; width: 190px; margin-right: 15px; margin-bottom: 15px; }
-	.blocks-content--child { background-color: #000; }
+/*	.blocks-content--child { background-color: #000; }*/
 }
 
 @media (max-height: 634px) and (min-width: 768px) {
